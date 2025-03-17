@@ -6,5 +6,5 @@ import javax.inject.Inject
 class BreedFactsUseCase @Inject constructor(
     private val breedFactsRepository: BreedFactsRepository
 ) {
-    suspend fun getFacts(breed: String) = breedFactsRepository.getFacts(breed)
+    suspend fun getFacts(breed: Int) = breedFactsRepository.getFacts(breed)
 }

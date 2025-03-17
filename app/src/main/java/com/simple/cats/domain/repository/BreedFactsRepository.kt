@@ -8,13 +8,13 @@ import com.simple.cats.presentation.util.CatResult
 import javax.inject.Inject
 
 interface BreedFactsRepository {
-    suspend fun getFacts(breedId: String) : CatResult<BreedFactsResponse>
+    suspend fun getFacts(breedId: Int) : CatResult<BreedFactsResponse>
 }
 
 class BreedFactsRepositoryImpl @Inject constructor(
     private val apiService: ApiService
 ): BreedFactsRepository {
-    override suspend fun getFacts(breedId: String): CatResult<BreedFactsResponse> {
+    override suspend fun getFacts(breedId: Int): CatResult<BreedFactsResponse> {
         return safeApiCall { apiService.getFacts(breedId) }.toResult()
     }
 }

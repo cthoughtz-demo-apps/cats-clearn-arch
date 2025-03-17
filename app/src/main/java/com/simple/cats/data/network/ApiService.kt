@@ -23,6 +23,6 @@ interface ApiService {
     )
     @GET("/v1/breeds/{breed_id}/facts")
     suspend fun getFacts(
-        @Path("breed_id") breedId: String
+        @Path("breed_id") breedId: Int
     ): BreedFactsResponse
 }

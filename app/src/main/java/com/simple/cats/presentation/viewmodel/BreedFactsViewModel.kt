@@ -25,7 +25,7 @@ class BreedFactsViewModel @Inject constructor(
         getBreed()
     }
 
-    fun getBreed(breedId: Int = "ragd") {
+    fun getBreed(breedId: Int = 1) {
         _breedFactsResultFlow.update { CatResult.Loading }
         viewModelScope.launch {
             val result = breedFactsUseCase.getFacts(breedId)

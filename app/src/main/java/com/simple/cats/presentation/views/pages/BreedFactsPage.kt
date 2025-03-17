@@ -166,7 +166,7 @@ fun SearchBarBreedFacts(
             onSearch = {
                 searchQuery?.let { query ->
 
-                    breedFactsViewModel.getBreed(query)
+                    breedFactsViewModel.getBreed(query.toInt())
                     onSearch(query)
                 }
                 focusManager.clearFocus()
